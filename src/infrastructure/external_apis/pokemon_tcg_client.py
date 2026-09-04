@@ -47,3 +47,8 @@ class PokemonTcgClient:
             "pageSize": page_size
         }
         return await self._get("/cards", params=params)
+
+    async def get_card_by_id(self, external_card_id: str) -> dict[str, Any]:
+        # Eu busco os dados de uma carta específica, incluindo cotações do tcgplayer e cardmarket
+        payload = await self._get(f"/cards/{external_card_id}")
+        return payload.get("data", {})

@@ -16,3 +16,7 @@ class PriceSnapshotRepository(Protocol):
     ) -> list[PriceSnapshot]:
         """Retorna a série temporal ordenada por data (pronta para gerar gráficos)."""
         ...
+
+    def find_latest_by_card_id(self, card_id: UUID) -> Optional[PriceSnapshot]:
+        """Busca o snapshot de preço mais recente da carta."""
+        ...

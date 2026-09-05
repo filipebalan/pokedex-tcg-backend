@@ -38,3 +38,15 @@ class SQLAlchemyPriceSnapshotRepository(PriceSnapshotRepository):
         models = result.scalars().all()
 
         return [PriceSnapshotMapper.to_domain(m) for m in models]
+
+    async def find_latest_by_card_id(self, card_id: UUID) -> Optional[PriceSnapshot]:
+        # Eu busco apenas o último snapshot ordenado por data descendente (LIMIT 1)
+        stmt = (
+            select(PriceSnapshotModel)
+            .where(PriceSnapshotModel.card_id == card_id)
+            .order_by(PriceSnapshotModel.captured_at.desc())
+            .limit(1)
+        )
+        result = await self._session.execute(stmt)
+        model = result.scalar_one_or_none()
+        return PriceSnapshotMapper.to_domain(model) if model else None

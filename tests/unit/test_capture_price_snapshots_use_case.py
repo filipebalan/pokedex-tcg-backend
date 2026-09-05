@@ -25,6 +25,8 @@ async def test_capture_for_card_deve_extrair_preco_e_salvar_snapshot() -> None:
     }
 
     mock_price_repo = AsyncMock()
+    # Eu simulo explicitamente que esta carta ainda não possuía cotação anterior
+    mock_price_repo.find_latest_by_card_id.return_value = None
 
     use_case = CapturePriceSnapshotsUseCase(
         price_repo=mock_price_repo,

@@ -1,4 +1,4 @@
-from typing import Protocol
+from typing import Protocol, Optional
 from uuid import UUID
 from datetime import datetime
 from src.domain.value_objects.card_types import PriceSnapshot

@@ -9,8 +9,6 @@
 ![Pytest](https://img.shields.io/badge/Pytest-24_Passed-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
 ![Security](https://img.shields.io/badge/Security-JWT_%26_Argon2id-critical?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
 
-# ⚡ Pokédex TCG — Backend & Série Temporal de Preços
-
 Backend de alta maturidade para catálogo, monitoramento de séries temporais de preços e gestão de portfólio do **Pokémon Trading Card Game físico**, construído com **Python 3.12+, FastAPI, SQLAlchemy 2.0, PostgreSQL 17, Redis 7 e Apache Kafka 3.8 (KRaft)**.
 
 ---

@@ -3,5 +3,14 @@ from src.infrastructure.database.models.set_model import SetModel
 from src.infrastructure.database.models.card_model import CardModel
 from src.infrastructure.database.models.price_snapshot_model import PriceSnapshotModel
 from src.infrastructure.database.models.user_model import UserModel
+from src.infrastructure.database.models.user_collection_model import UserCollectionModel, UserCollectionItemModel
 
-__all__ = ["Base", "SetModel", "CardModel", "PriceSnapshotModel", "UserModel"]
+__all__ = [
+    "Base",
+    "SetModel",
+    "CardModel",
+    "PriceSnapshotModel",
+    "UserModel",
+    "UserCollectionModel",
+    "UserCollectionItemModel"
+]

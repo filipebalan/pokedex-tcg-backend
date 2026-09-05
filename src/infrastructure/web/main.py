@@ -30,3 +30,10 @@ app.include_router(collection_router)
 @app.get("/health", tags=["Health"])
 async def health_check() -> dict[str, str]:
     return {"status": "healthy"}
+
+from src.infrastructure.web.routers.portfolio_router import router as portfolio_router
+# ...
+app.include_router(auth_router)
+app.include_router(card_router)
+app.include_router(collection_router)
+app.include_router(portfolio_router)  # Novo router de portfólio
